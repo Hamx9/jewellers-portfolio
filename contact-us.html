@@ -105,69 +105,66 @@
       </div>
     </div>
   </div>
- <div class="contact-form-section section-spacing-bottom">
-    <div class="container-full w-container">
-      <div class="contact-form">
-        <h6 class="contact-title">Send Us Your Questions!</h6>
-        <div class="w-form">
-          <form id="wf-form-Contact-Form">
-            <div class="form-input-wrap">
-              <div class="input-group input-full-width">
-                <label for="Name">Name</label>
-                <input class="form-input input-full w-input" maxlength="256" name="Name"
-                  placeholder="Enter Your Name" type="text" id="Name" required>
-              </div>
-              <div class="input-group input-full-width">
-                <label for="Phone-No">Phone No</label>
-                <input class="form-input input-full w-input" maxlength="256" name="Phone-No"
-                  placeholder="Enter Your Phone No" type="tel" id="Phone-No" required>
-              </div>
-            </div>
-            <div class="input-group">
-              <label for="Email">Email</label>
-              <input class="form-input w-input" maxlength="256"
-                name="Email" placeholder="Enter Your Email" type="email" id="Email" required>
-            </div>
-            <div class="input-group">
-              <label for="Message">Message</label>
-              <textarea id="Message" name="Message" maxlength="5000"
-                placeholder="Type your message here..." class="form-input form-textarea w-input" required></textarea>
-            </div>
-            <div class="button-center">
-              <input type="submit" class="dark-button button-full w-button" value="Submit">
-            </div>
-          </form>
+<div class="contact-form-section section-spacing-bottom">
+  <div class="container-full w-container">
+    <div class="contact-form">
+      <h6 class="contact-title">Send Us Your Questions!</h6>
+      <form id="contact-form">
+        <div class="form-input-wrap">
+          <div class="input-group input-full-width">
+            <label for="Name">Name</label>
+            <input class="form-input input-full w-input" maxlength="256"
+              name="Name" placeholder="Enter Your Name" type="text" id="Name" required>
+          </div>
+          <div class="input-group input-full-width">
+            <label for="Phone-No">Phone No</label>
+            <input class="form-input input-full w-input" maxlength="256"
+              name="Phone-No" placeholder="Enter Your Phone No" type="tel" id="Phone-No" required>
+          </div>
         </div>
-      </div>
+        <div class="input-group">
+          <label for="Email">Email</label>
+          <input class="form-input w-input" maxlength="256"
+            name="Email" placeholder="Enter Your Email" type="email" id="Email" required>
+        </div>
+        <div class="input-group">
+          <label for="Message">Message</label>
+          <textarea id="Message" name="Message" maxlength="5000"
+            placeholder="Type your message here..." class="form-input form-textarea w-input" required></textarea>
+        </div>
+        <div class="button-center">
+          <button type="submit" class="dark-button button-full w-button">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
-  
-  <script>
-    document.getElementById("wf-form-Contact-Form").addEventListener("submit", function (e) {
-      e.preventDefault(); // stop normal form submission
-  
-      // Get values from form
-      let name = document.getElementById("Name").value;
-      let phone = document.getElementById("Phone-No").value;
-      let email = document.getElementById("Email").value;
-      let message = document.getElementById("Message").value;
-  
-      // WhatsApp number (without + sign, country code only)
-      let whatsappNumber = "923205082670";
-  
-      // Format the message
-      let text = `Hello Kangan Jewellers,%0A%0A` +
-                 `Name: ${name}%0A` +
-                 `Phone: ${phone}%0A` +
-                 `Email: ${email}%0A` +
-                 `Message: ${message}`;
-  
-      // Redirect to WhatsApp
-      let url = `https://wa.me/${whatsappNumber}?text=${text}`;
-      window.open(url, "_blank"); // opens WhatsApp in new tab/app
-    });
-  </script>
-  
+</div>
+
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // stop normal form submission
+
+    // Get values
+    let name = document.getElementById("Name").value;
+    let phone = document.getElementById("Phone-No").value;
+    let email = document.getElementById("Email").value;
+    let message = document.getElementById("Message").value;
+
+    // WhatsApp number (without + sign)
+    let whatsappNumber = "923205082670";
+
+    // Encode message
+    let text = `Hello Kangan Jewellers,%0A%0A` +
+               `Name: ${name}%0A` +
+               `Phone: ${phone}%0A` +
+               `Email: ${email}%0A` +
+               `Message: ${message}`;
+
+    // Redirect to WhatsApp
+    let url = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(url, "_blank"); 
+  });
+</script>
    <!-- <div id="Map-Section" class="map-section">
     <div class="map w-widget w-widget-map" data-widget-style="roadmap" data-widget-latlng="40.7127753,-74.0059728"
       aria-label="Jewel" data-enable-scroll="false" role="region" title="Jewel" data-enable-touch="true"
